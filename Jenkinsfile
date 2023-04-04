@@ -21,12 +21,14 @@ pipeline {
             }
         }
         stage('Stop Uvicorn') {
-            when {
-                buildingTag()
-            }
+            
             steps {
                 bat 'set /p pid=<pid.txt && timeout /t 60 && taskkill /f /pid %pid%'
+                
             }
         }
     }
 }
+
+
+
