@@ -13,7 +13,7 @@ pipeline {
                
             }
         }
-      stage('Build') {
+      stage('deploy') {
             steps {
                 
                 bat 'python -m pip install uvicorn'
