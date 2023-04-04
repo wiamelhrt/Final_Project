@@ -16,7 +16,7 @@ pipeline {
       stage('Build') {
             steps {
                 
-                bat 'pip install uvicorn'
+                bat 'python -m pip install uvicorn'
                 bat 'start cmd /c "python -m uvicorn app:app --reload & echo %PROCESS_ID% > pid.txt"'
             }
         }
