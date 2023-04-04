@@ -20,13 +20,7 @@ pipeline {
                 bat 'start cmd /c "python -m uvicorn app:app --reload & echo %PROCESS_ID% > pid.txt"'
             }
         }
-        stage('Stop Uvicorn') {
-            
-            steps {
-                bat 'set /p pid=<pid.txt && timeout /t 60 && taskkill /f /pid %pid%'
-                
-            }
-        }
+        
     }
 }
 
